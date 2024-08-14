@@ -60,9 +60,12 @@ class Fraction:
         """Return a textual representation of the reduced form of the fraction
 
         PRE: None
-        POST: Renvoie une chaîne sous la forme "numérateur/dénominateur"
+        POST: Renvoie une chaîne sous la forme "numérateur/dénominateur" ou "numérateur" si le dénominateur est 1.
         """
+        if self._denominator == 1:
+            return str(self._numerator)  # Renvoie simplement le numérateur si le dénominateur est 1
         return f"{self._numerator}/{self._denominator}"
+
 
     def as_mixed_number(self):
         """Return a textual representation of the reduced form of the fraction as a mixed number
@@ -231,6 +234,7 @@ class Fraction:
         """
         return abs(self._numerator) == 1 and self._denominator != 1
 
+
     def is_adjacent_to(self, other):
         """Check if two fractions differ by a unit fraction
 
@@ -253,3 +257,14 @@ class Fraction:
         print(f"La différence est une fraction unitaire : {result}")
 
         return result
+
+f1 = Fraction(2, 4)
+f2 = Fraction(3, 6) 
+
+
+print("Fraction f1:", f1)  #  "1/2"
+print("Fraction f2:", f2)  #  "1/2"
+print("f1 est zéro?:", f1.is_zero())  #  False
+print("Addition de f1 et f2:", f1 + f2)  #  "1"
+print("f1 élevé au carré:", f1 ** 2)  #  "1/4"
+print("f1 est égal à f2?:", f1 == f2)  # True

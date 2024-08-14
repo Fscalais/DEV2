@@ -1,7 +1,7 @@
 from fraction import Fraction
 
 def test_fraction():
-    tests_passed = True  # Flag pour suivre le statut des tests
+    tests_passed = True
 
     # Test de la création et de la simplification des fractions
     try:
